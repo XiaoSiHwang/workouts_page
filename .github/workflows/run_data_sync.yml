@@ -1,18 +1,18 @@
 name: Run Data Sync
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: 
   schedule:
     - cron: '0 0 * * *'
   push:
     branches:
       - master
     paths:
-      - run_page/nike_sync.py
-      - run_page/nike_to_strava_sync.py
-      - run_page/strava_sync.py
+      - run_page/nike_sync.py 
+      - run_page/nike_to_strava_sync.py 
+      - run_page/strava_sync.py 
       - run_page/gen_svg.py
-      - run_page/garmin_sync.py
+      - run_page/garmin_sync.py 
       - run_page/keep_sync.py
       - run_page/gpx_sync.py
       - run_page/tcx_sync.py
@@ -20,21 +20,21 @@ on:
       - requirements.txt
 
 env:
-  # please change to your own config.
-  RUN_TYPE: pass # support strava/nike/garmin/garmin_cn/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
-  ATHLETE: yihong0618
-  TITLE: Yihong0618 Running
-  MIN_GRID_DISTANCE: 10 # change min distance here
-  TITLE_GRID: Over 10km Runs # also here
-  GITHUB_NAME: yihong0618 # change to yours
-  GITHUB_EMAIL: zouzou0208@gmail.com # change to yours
+  # please change to your own config. 
+  RUN_TYPE: garmin # support strava/nike/garmin/garmin_cn/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own   
+  ATHLETE: Ron2015   
+  TITLE: Ron Running
+  MIN_GRID_DISTANCE: 10 # change min distance here 
+  TITLE_GRID: Over 10km Runs # also here  
+  GITHUB_NAME: Tuanshan2012 # change to yours  
+  GITHUB_EMAIL: yc383cy@gmail.com # change to yours  
 
-  # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
+  # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True 
   IGNORE_START_END_RANGE: 10 # Unit meter
-  # Dont making this huge, just picking points you needing. https://developers.google.com/maps/documentation/utilities/polylineutility using this tool to making your polyline
-  IGNORE_POLYLINE: 'ktjrFoemeU~IorGq}DeB'
-  IGNORE_RANGE: 10 # Unit meter
-  SAVE_DATA_IN_GITHUB_CACHE: false # if you deploy in the vercal, check the README
+  # Dont making this huge, just picking points you needing. https://developers.google.com/maps/documentation/utilities/polylineutility using this tool to making your polyline 
+  IGNORE_POLYLINE: 'ktjrFoemeU~IorGq}DeB' 
+  IGNORE_RANGE: 10 # Unit meter 
+  SAVE_DATA_IN_GITHUB_CACHE: false # if you deploy in the vercal, check the README 
   DATA_CACHE_PREFIX: 'track_data'
   BUILD_GH_PAGES: true # If you do not need GitHub Page please set it to `false`
 
@@ -174,7 +174,7 @@ jobs:
           python run_page/gen_svg.py --from-db --year $(date +"%Y")  --language zh_CN --title "$(date +"%Y") Running" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github_$(date +"%Y").svg --use-localtime --min-distance 0.5
 
       - name: Push new runs
-        if: env.SAVE_DATA_IN_GITHUB_CACHE != 'true'
+        if: env.SAVE_DATA_IN_GITHUB_CACHE != 'true' 
         run: |
           git config --local user.email "${{ env.GITHUB_EMAIL }}"
           git config --local user.name "${{ env.GITHUB_NAME }}"
