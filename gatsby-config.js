@@ -3,20 +3,24 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
-    siteTitle: 'Workouts Map',
-    siteUrl: 'https://ben29.xyz',
-    logo: 'https://avatars3.githubusercontent.com/u/6956444?s=460&u=97e1062227c4088db3c987146455245c6fa78441',
-    description: 'Personal Workouts Page',
+    siteTitle: 'XiaoSi Hwang Workout Maps',
+    siteUrl: 'https://blog.999973.xyz/',
+    logo: 'https://chevereto.999973.xyz/images/2023/04/27/IMG_7029-3.jpg',
+    description: '我的个人运动记录',
     keywords: 'workouts, running, cycling, riding, roadtrip, hiking, swimming',
     navLinks: [
       {
         name: 'Blog',
-        url: 'https://ben29.xyz',
+        url: 'https://workouts-page.999973.xyz/',
       },
       {
-        name: 'About',
-        url: 'https://github.com/ben-29/workouts_page/blob/master/README-CN.md',
+        name: 'GitHub',
+        url: 'https://github.com/XiaoSiHwang',
       },
+      {
+        name: 'Strava',
+        url: 'https://www.strava.com/athletes/70140062',
+      }
     ],
   },
   plugins: [
