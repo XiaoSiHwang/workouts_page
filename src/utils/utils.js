@@ -216,6 +216,7 @@ const titleForRun = (run) => {
 const colorFromType = (workoutType) => {
   switch (workoutType) {
     case 'Run':
+    case 'VirtualRun':
       return RUN_COLOR;
     case 'Ride':
     case 'Indoor Ride':
