@@ -53,6 +53,7 @@ def config(*keys):
 TYPE_DICT = {
     "running": "Run",
     "RUN": "Run",
+    "VirtualRun": "VirtualRun",
     "Run": "Run",
     "cycling": "Ride",
     "CYCLING": "Ride",
