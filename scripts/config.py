@@ -82,6 +82,7 @@ MAPPING_TYPE = [
     "RoadTrip",
     "Kayaking",
     "Snowboard",
+    "VirtualRun"
 ]
 
 STRAVA_GARMIN_TYPE_DICT = {
